@@ -3,23 +3,37 @@
 	"description": "Feed reading and aggregating for Node.",
 	"author": "Dave Winer <dave@smallpicture.com>",
 	"license": "MIT",
-	"version": "0.6.10", 
+	"version": "0.6.10",
 	"main": "davereader.js",
+	"type": "script",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/scripting/reader.git"
-		},
+	},
 	"files": [
 		"davereader.js"
-		],
-	"dependencies" : {
+	],
+	"dependencies": {
+		"davefeedread": "*",
 		"daveutils": "*",
-		"request": "*",
-		"mime": "*",
+		"feedparser": "*",
 		"md5": "*",
+		"mime": "*",
 		"nodejs-websocket": "*",
 		"opmlparser": "*",
-		"feedparser": "*",
-		"davefeedread": "*"
-		} 
-	}
+		"request": "*",
+		"standard": "^16.0.3"
+	},
+	"devDependencies": {
+		"eslint-config-entrain": "^2.0.2"
+	},
+  "eslintConfig": {
+    "extends": "entrain",
+    "rules": {
+      "node/no-callback-literal": "off"
+    },
+    "parserOptions": {
+      "sourceType": "script"
+    }
+  }
+}
